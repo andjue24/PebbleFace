@@ -1,0 +1,23 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "a.juenemann@icloud.com",
+    "enableMultiJS": true,
+    "longName": "Tutorial 1",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "Tutorial 1",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "2e914918-7f0d-48a8-974c-bbb7227a5fa2",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
