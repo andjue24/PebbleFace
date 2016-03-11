@@ -8,7 +8,50 @@
     "longName": "Tutorial 1",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "fonts/JOURNAL_KLEIN.TTF",
+                "name": "FONT_JOURNAL_30",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "file": "images/Profilbild_dithered.png",
+                "name": "IMAGE_MEMYSELFANDI",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/background.png",
+                "name": "IMAGE_BACKGROUND",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "characterRegex": "[0-9:. ]",
+                "file": "fonts/JOURNAL.TTF",
+                "name": "FONT_JOURNAL_48",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:. ]",
+                "file": "fonts/28 Days Later.ttf",
+                "name": "FONT_28DAYS_LATER_30",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            }
+        ]
     },
     "sdkVersion": "3",
     "shortName": "Tutorial 1",
