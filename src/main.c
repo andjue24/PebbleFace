@@ -50,26 +50,31 @@ static void main_window_load(Window *window) {
 	bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
 	layer_add_child(window_layer, bitmap_layer_get_layer(s_background_layer));
 
-  // Create time TextLayer with specific bounds
+  // Create TIME TextLayer with specific bounds
   s_time_layer = text_layer_create(
-      GRect(0, PBL_IF_ROUND_ELSE(58, 50), bounds.size.w, 50));
+      GRect(0, PBL_IF_ROUND_ELSE(58, 45), bounds.size.w, 40));
 	
-	// Create date TextLayer with specific bounds
+	// Create DATE TextLayer with specific bounds
   s_date_layer = text_layer_create(
-      GRect(0, PBL_IF_ROUND_ELSE(58, 130), bounds.size.w, 35));
+      GRect(0, PBL_IF_ROUND_ELSE(58, 0), bounds.size.w, 17));
+	
+	// Create temperature Layer
+	s_weather_layer = text_layer_create(
+  GRect(0, PBL_IF_ROUND_ELSE(125, 110), bounds.size.w, 50));
 	
 	// Create GFont
-	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_JOURNAL_48));
-	s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_JOURNAL_30));
+	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_SIMPSONS_40));
+	s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_SIMPSONS_14));
 
-  // Improve the layout to be more like a watchface
-  text_layer_set_background_color(s_time_layer, GColorClear);
-  text_layer_set_text_color(s_time_layer, GColorBlack);
-	text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
-	
-	text_layer_set_background_color(s_date_layer, GColorClear);
+	// Style the DATE text
+	text_layer_set_background_color(s_date_layer, GColorBlack);
   text_layer_set_text_color(s_date_layer, GColorWhite);
-	text_layer_set_text_alignment(s_date_layer, GTextAlignmentLeft);
+	text_layer_set_text_alignment(s_date_layer, GTextAlignmentRight);
+	
+	// Style the TIME text	
+  text_layer_set_background_color(s_time_layer, GColorClear);
+  text_layer_set_text_color(s_time_layer, GColorBulgarianRose);
+	text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
 	
   // Apply to TextLayer
 	text_layer_set_font(s_time_layer, s_time_font);
@@ -79,18 +84,14 @@ static void main_window_load(Window *window) {
   layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
   layer_add_child(window_layer, text_layer_get_layer(s_date_layer));
 	
-	// Create temperature Layer
-	s_weather_layer = text_layer_create(
-  GRect(0, PBL_IF_ROUND_ELSE(125, 1), bounds.size.w, 50));
-
-	// Style the text
+	// Style the WEATHER text
 	text_layer_set_background_color(s_weather_layer, GColorClear);
-	text_layer_set_text_color(s_weather_layer, GColorWhite);
-	text_layer_set_text_alignment(s_weather_layer, GTextAlignmentCenter);
-	text_layer_set_text(s_weather_layer, "Loading...");
+	text_layer_set_text_color(s_weather_layer, GColorWhite);	
+	text_layer_set_text_alignment(s_weather_layer, GTextAlignmentRight);
+	text_layer_set_text(s_weather_layer, "Lädt...");
 	
-	// Create second custom font, apply it and add to Window
-	s_weather_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_JOURNAL_30));
+	// Style the WEATHER text, apply it and add to Window
+	s_weather_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_BLAZED_24));
 	text_layer_set_font(s_weather_layer, s_weather_font);
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_weather_layer));
 }
@@ -120,7 +121,30 @@ static void main_window_unload(Window *window) {
 }
 
 static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
+	// Store incoming information
+	static char temperature_buffer[8];
+	static char conditions_buffer[32];
+	static char weather_layer_buffer[32];
 	
+	// Read tuples for data
+	Tuple *temp_tuple = dict_find(iterator, KEY_TEMPERATURE);
+	Tuple *conditions_tuple = dict_find(iterator, KEY_CONDITIONS);
+
+	// If all data is available, use it
+	if(temp_tuple && conditions_tuple) {
+  snprintf(temperature_buffer, sizeof(temperature_buffer), "%d °C ", (int)temp_tuple->value->int32);
+  snprintf(conditions_buffer, sizeof(conditions_buffer), "%s ", conditions_tuple->value->cstring);
+	}
+	
+	if(temp_tuple->value->int32 <= 10) {
+	text_layer_set_text_color(s_weather_layer, GColorCyan);
+	} else if(temp_tuple->value->int32 >= 25) {
+		text_layer_set_text_color(s_weather_layer, GColorRajah);
+	}
+	
+	// Assemble full string and display
+	snprintf(weather_layer_buffer, sizeof(weather_layer_buffer), "%s\n%s", temperature_buffer, conditions_buffer);
+	text_layer_set_text(s_weather_layer, weather_layer_buffer);
 }
 
 static void inbox_dropped_callback(AppMessageResult reason, void *context) {
@@ -153,7 +177,6 @@ static void init() {
 	
 	// Make sure the time is displayed from the start
 	update_time();
-	
 	window_set_background_color(s_main_window, GColorBlack);
 	
 	// Register callbacks

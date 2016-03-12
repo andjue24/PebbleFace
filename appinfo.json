@@ -13,7 +13,32 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/JOURNAL_KLEIN.TTF",
+                "file": "images/menu_image.png",
+                "name": "IMAGE_MENU",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "fonts/Blazed.ttf",
+                "name": "FONT_BLAZED_18",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "file": "fonts/Blazed.ttf",
+                "name": "FONT_BLAZED_24",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:., A-Za-z\u00b0 ]",
+                "file": "fonts/Journal",
                 "name": "FONT_JOURNAL_30",
                 "targetPlatforms": [
                     "basalt"
@@ -21,12 +46,31 @@
                 "type": "font"
             },
             {
-                "file": "images/Profilbild_dithered.png",
-                "name": "IMAGE_MEMYSELFANDI",
+                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
+                "file": "fonts/Simpsons.ttf",
+                "name": "FONT_SIMPSONS_40",
                 "targetPlatforms": [
                     "basalt"
                 ],
-                "type": "bitmap"
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
+                "file": "fonts/Simpsons.ttf",
+                "name": "FONT_SIMPSONS_20",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
+                "file": "fonts/Simpsons.ttf",
+                "name": "FONT_SIMPSONS_14",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
             },
             {
                 "file": "images/background.png",
@@ -35,24 +79,6 @@
                     "basalt"
                 ],
                 "type": "bitmap"
-            },
-            {
-                "characterRegex": "[0-9:. ]",
-                "file": "fonts/JOURNAL.TTF",
-                "name": "FONT_JOURNAL_48",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:. ]",
-                "file": "fonts/28 Days Later.ttf",
-                "name": "FONT_28DAYS_LATER_30",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
             }
         ]
     },
