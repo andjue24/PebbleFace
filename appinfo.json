@@ -1,11 +1,14 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "KEY_CONDITIONS": 1,
+        "KEY_TEMPERATURE": 0
+    },
     "capabilities": [
-        ""
+        "location"
     ],
-    "companyName": "a.juenemann@icloud.com",
+    "companyName": "Demo Watch",
     "enableMultiJS": true,
-    "longName": "Tutorial 1",
+    "longName": "AJs Erstes Pebble Watchface",
     "projectType": "native",
     "resources": {
         "media": [
@@ -54,7 +57,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Tutorial 1",
+    "shortName": "AJs Watchface",
     "targetPlatforms": [
         "basalt"
     ],
