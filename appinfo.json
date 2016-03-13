@@ -13,7 +13,25 @@
     "resources": {
         "media": [
             {
+                "file": "fonts/BarCode.ttf",
+                "name": "FONT_BARCODE_48",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:.,A-Za-z ]",
+                "file": "fonts/Cargo.ttf",
+                "name": "FONT_CARGO_12",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
                 "file": "images/menu_image.png",
+                "menuIcon": true,
                 "name": "IMAGE_MENU",
                 "targetPlatforms": [
                     "basalt"

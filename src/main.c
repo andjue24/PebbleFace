@@ -29,7 +29,7 @@ static void update_time() {
 	
 	// Write the current day and month into a buffer
   static char s_bufferDate[30];
-  strftime(s_bufferDate, sizeof(s_bufferDate), "%a, %d %B", tick_time);
+  strftime(s_bufferDate, sizeof(s_bufferDate), "%a, %d %B ", tick_time);
 	
 	// Display this date on the TextLayer
   text_layer_set_text(s_date_layer, s_bufferDate);
@@ -56,15 +56,15 @@ static void main_window_load(Window *window) {
 	
 	// Create DATE TextLayer with specific bounds
   s_date_layer = text_layer_create(
-      GRect(0, PBL_IF_ROUND_ELSE(58, 0), bounds.size.w, 17));
+      GRect(0, PBL_IF_ROUND_ELSE(58, 0), bounds.size.w, 14));
 	
 	// Create temperature Layer
 	s_weather_layer = text_layer_create(
   GRect(0, PBL_IF_ROUND_ELSE(125, 110), bounds.size.w, 50));
 	
 	// Create GFont
-	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_SIMPSONS_40));
-	s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_SIMPSONS_14));
+	s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_BARCODE_48));
+	s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_CARGO_12));
 
 	// Style the DATE text
 	text_layer_set_background_color(s_date_layer, GColorBlack);
