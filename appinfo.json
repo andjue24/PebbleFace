@@ -13,6 +13,14 @@
     "resources": {
         "media": [
             {
+                "file": "fonts/MeteoSat.ttf",
+                "name": "FONT_METEO_48",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
                 "characterRegex": "[0-9:.,A-Za-z\u00b0\\- ]",
                 "file": "fonts/Fibel Nord.ttf",
                 "name": "FONT_FIBEL_NORD_18",
