@@ -13,8 +13,45 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/BarCode.ttf",
-                "name": "FONT_BARCODE_48",
+                "characterRegex": "[0-9:.,A-Za-z\u00b0\\- ]",
+                "file": "fonts/Fibel Nord.ttf",
+                "name": "FONT_FIBEL_NORD_18",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:.,A-Za-z\u00b0\\- ]",
+                "file": "fonts/Fibel Nord.ttf",
+                "name": "FONT_FIBEL_NORD_14",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:.,A-Za-z\u00b0\\- ]",
+                "file": "fonts/Fibel Nord.ttf",
+                "name": "FONT_FIBEL_NORD_12",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:., A-Za-z\u00b0 ]",
+                "file": "fonts/Journal.ttf",
+                "name": "FONT_JOURNAL_30",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:., A-Za-z* ]",
+                "file": "fonts/Snow.ttf",
+                "name": "FONT_SNOW_24",
                 "targetPlatforms": [
                     "basalt"
                 ],
@@ -22,8 +59,26 @@
             },
             {
                 "characterRegex": "[0-9:.,A-Za-z ]",
+                "file": "fonts/BarCode.ttf",
+                "name": "FONT_BARCODE_46",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
                 "file": "fonts/Cargo.ttf",
                 "name": "FONT_CARGO_12",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
+                "file": "fonts/Cargo.ttf",
+                "name": "FONT_CARGO_18",
                 "targetPlatforms": [
                     "basalt"
                 ],
@@ -40,14 +95,6 @@
             },
             {
                 "file": "fonts/Blazed.ttf",
-                "name": "FONT_BLAZED_18",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "file": "fonts/Blazed.ttf",
                 "name": "FONT_BLAZED_24",
                 "targetPlatforms": [
                     "basalt"
@@ -56,8 +103,8 @@
             },
             {
                 "characterRegex": "[0-9:., A-Za-z\u00b0 ]",
-                "file": "fonts/Journal",
-                "name": "FONT_JOURNAL_30",
+                "file": "fonts/Blazed.ttf",
+                "name": "FONT_BLAZED_18",
                 "targetPlatforms": [
                     "basalt"
                 ],
