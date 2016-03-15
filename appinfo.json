@@ -6,60 +6,15 @@
     "capabilities": [
         "location"
     ],
-    "companyName": "Demo Watch",
+    "companyName": "El Duderino",
     "enableMultiJS": true,
-    "longName": "AJs Erstes Pebble Watchface",
+    "longName": "AJs Pebble Watchface",
     "projectType": "native",
     "resources": {
         "media": [
             {
-                "file": "fonts/MeteoSat.ttf",
-                "name": "FONT_METEO_48",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:.,A-Za-z\u00b0\\- ]",
-                "file": "fonts/Fibel Nord.ttf",
-                "name": "FONT_FIBEL_NORD_18",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:.,A-Za-z\u00b0\\- ]",
-                "file": "fonts/Fibel Nord.ttf",
-                "name": "FONT_FIBEL_NORD_14",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:.,A-Za-z\u00b0\\- ]",
-                "file": "fonts/Fibel Nord.ttf",
-                "name": "FONT_FIBEL_NORD_12",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:., A-Za-z\u00b0 ]",
-                "file": "fonts/Journal.ttf",
-                "name": "FONT_JOURNAL_30",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:., A-Za-z* ]",
-                "file": "fonts/Snow.ttf",
-                "name": "FONT_SNOW_24",
+                "file": "fonts/WeatherSymbol.ttf",
+                "name": "FONT_WEATHERSYMBOL_64",
                 "targetPlatforms": [
                     "basalt"
                 ],
@@ -69,24 +24,6 @@
                 "characterRegex": "[0-9:.,A-Za-z ]",
                 "file": "fonts/BarCode.ttf",
                 "name": "FONT_BARCODE_46",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
-                "file": "fonts/Cargo.ttf",
-                "name": "FONT_CARGO_12",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
-                "file": "fonts/Cargo.ttf",
-                "name": "FONT_CARGO_18",
                 "targetPlatforms": [
                     "basalt"
                 ],
@@ -119,33 +56,6 @@
                 "type": "font"
             },
             {
-                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
-                "file": "fonts/Simpsons.ttf",
-                "name": "FONT_SIMPSONS_40",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
-                "file": "fonts/Simpsons.ttf",
-                "name": "FONT_SIMPSONS_20",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
-                "characterRegex": "[0-9:.,A-Za-z\u00b0 ]",
-                "file": "fonts/Simpsons.ttf",
-                "name": "FONT_SIMPSONS_14",
-                "targetPlatforms": [
-                    "basalt"
-                ],
-                "type": "font"
-            },
-            {
                 "file": "images/background.png",
                 "name": "IMAGE_BACKGROUND",
                 "targetPlatforms": [
@@ -161,7 +71,7 @@
         "basalt"
     ],
     "uuid": "2e914918-7f0d-48a8-974c-bbb7227a5fa2",
-    "versionLabel": "1.0",
+    "versionLabel": "0.2",
     "watchapp": {
         "watchface": true
     }
